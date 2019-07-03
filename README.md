@@ -1,6 +1,9 @@
 # T3den Mobile Application
 
-_Built using Ionic 3! Please note this source is outdated and no longer maintained._
+**_Built using Ionic 3! Please note this source is outdated and no longer maintained._**
+
+This application supports fetching many cryptocurrencies such as Bitcoin,Etherium, and many more, then converts their prices to more than 30 fiat currencies.
+
 
 You can test and view this application at [Google Play Store](http://bit.ly/t3den-app-google-play).
 

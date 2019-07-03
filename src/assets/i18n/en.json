@@ -1,0 +1,45 @@
+{
+  "APP_NAME": "T3DEN",
+  "APP_DESC": "T3DEN - Cryptocurrency Price Checker",
+  "APP_DESC_LONG": "A platform which provides tutorials and walkthroughs in addition to other useful tools for people around the world who need help getting started making profits using cryptocurrencies and ICOs.",
+
+  "SHARE_APP": "Share App",
+  "CHECKER": "Currencies Prices",
+  "SETTINGS": "Settings",
+  "ABOUT": "About T3DEN",
+  "PULSE": "Prices History",
+  "AR": "عربى",
+  "EN": "English",
+
+  "BTC": "Bitcoin",
+  "ETH": "Ethereum",
+  "LTC": "Litecoin",
+  "DASH": "Dash",
+  "XRP": "Ripple",
+  "XEM": "NEM",
+  "NEO": "NEO",
+  "XMR": "Monero",
+  "ZEC": "ZCash",
+  "BCH": "Bitcoin Cash",
+  "BCN": "Bytecoin",
+
+  "SETTINGS_DEFAULT_CURRENCY": "Favorite Currency",
+  "SETTINGS_LOCAL_CURRENCY": "Favorite Fiat Currency",
+  "SETTINGS_INTERVAL": "Prices Update Period",
+  "SETTINGS_FORMAT": "Prices Format",
+  "SETTINGS_LANG": "Application Language",
+  "SETTINGS_LABEL_COMMA": "Commas: 1,000,000",
+  "SETTINGS_LABEL_DOTS": "Dots: 1.000.000",
+  "SETTINGS_LABEL_PLAIN": "Simple: 1000000",
+  "SETTINGS_SAVED": "Settings Updated",
+  "MIN": "Min.",
+
+  "VIEW_HISTORY": "View History",
+  "SELECT_FIAT_CURRENCY": "Select a Fiat Currency",
+  "TICKER_ERROR": "An error occured when fetching prices, please check your internet connection!",
+
+  "LEARN_MORE": "Learn More",
+  "UPDATE": "Save",
+  "OK": "Done",
+  "CANCEL": "Cancel"
+}

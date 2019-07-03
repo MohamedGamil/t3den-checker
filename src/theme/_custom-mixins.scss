@@ -1,0 +1,22 @@
+//--- App Custom Mixins
+///
+///
+
+
+
+
+/*
+ * Clearfix Mixin
+ */
+
+@mixin clearfix() {
+    
+    &:before, &:after {
+        content: " ";
+        display: table;
+    }
+    
+    &:after {
+        clear: both;
+    }
+}

@@ -1,0 +1,23 @@
+<ion-content class="position-relative">
+  <common-header [hero]="true" pageTitle="ABOUT"></common-header>
+  <div class="big-cards" [ngClass]="helper.langDir()">
+    <ion-card>
+      <ion-card-content>
+        <div class="logo-about"></div>
+        <div padding-horizontal class="about-text" [attr.dir]="helper.langDir()">
+          <h1>
+            {{ 'APP_NAME' | translate }}
+          </h1>
+          <p padding-bottom>
+            {{ 'APP_DESC_LONG' | translate }}
+          </p>
+          <div class="link-wrap" text-center>
+            <a ion-button color="primary" small href="{{ 'http://t3den.com' | utm }}" target="_blank">
+              {{ 'LEARN_MORE' | translate }}
+            </a>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

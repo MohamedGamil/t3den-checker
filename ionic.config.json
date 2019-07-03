@@ -1,0 +1,8 @@
+{
+  "name": "voidblockCPF",
+  "app_id": "550c28aa",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

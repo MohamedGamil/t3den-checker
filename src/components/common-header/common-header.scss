@@ -1,0 +1,208 @@
+common-header {
+    $text: #FFF;
+    $bars: #FFF;
+    $titleSize: 16px;
+    $heroHeight: 106px;
+    overflow: hidden;
+
+    .toolbar {
+        padding: 0 !important;
+    }
+    
+    .hasLogo {
+
+        > .toolbar > .toolbar-background {
+            background: #ffb50b;
+            background: -moz-linear-gradient(left, #ffb50b 1%, #ffd167 100%);
+            background: -webkit-linear-gradient(left, #ffb50b 1%, #ffd167 100%);
+            background: linear-gradient(to right, #ffb50b 1%, #ffd167 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb50b', endColorstr='#ffd167', GradientType=1);
+        }
+
+        .common-navbar > .toolbar-background {
+            background-color: transparent;
+        }
+    }
+    
+    .main-sm-title {
+        position: relative;
+        z-index: 1;
+
+        > .toolbar-title {
+            padding: 0;
+        }
+
+        h5 {
+            width: 100%;
+            margin-top: 6px;
+            white-space: initial;
+            text-align: center;
+            color: $text;
+            font-size: $titleSize;
+            text-shadow: 0 2px 12px rgba(#000, .1);
+        }
+    }
+
+    .bar-button-menutoggle,
+    .back-button {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        width: 32px;
+        height: 32px;
+        margin-top: 14px !important;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    
+    .back-button {
+        color: $text;
+    }
+
+    .bar-button-menutoggle {
+
+        .button-inner {
+            display: block;
+            padding-top: 10px;
+        }
+
+        &:hover {
+            .button-inner {
+                background-color: rgba(color($colors, dark), .05);
+                box-shadow: 0 1px 8px rgba(#000, 0.15) inset;
+            }
+        }
+
+        .bar1, .bar2, .bar3 {
+            position: absolute;
+            z-index: 1;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: block;
+            height: 2px;
+            background: $bars;
+            transform: translateX(0) translateY(0) translateZ(0);
+        }
+
+        .bar1, .bar2 {
+            width: 18px;
+        }
+
+        .bar3 {
+            width: 11px;
+            transform: translateY(5px) translateZ(0);
+        }
+
+        .bar1 {
+            transform: translateY(-5px) translateZ(0);
+        }
+        
+        &.dir-rtl {
+            right: 0;
+            margin-right: 6px !important;
+
+            .button-inner {
+                text-align: right;
+            }
+
+            .bar3 {
+                transform: translate(3px, 5px) translateZ(0);
+            }
+        }
+
+        &.dir-ltr {
+            left: 0;
+            margin-left: 6px !important;
+
+            .button-inner {
+                text-align: left;
+            }
+
+            .bar3 {
+                transform: translate(-3px, 5px) translateZ(0);
+            }
+        }
+
+        &.idle {
+
+            .bar1, .bar2, .bar3 {
+                transform-origin: left center;
+                animation: menuBarsIdle infinite 3s ease-in-out;
+            }
+
+            .bar2 {
+                animation-delay: .5s;
+            }
+
+            .bar3 {
+                animation-delay: 1s;
+            }
+        }
+    }
+
+    .isHero {
+        
+        > .toolbar {
+            height: $heroHeight;
+
+            > .toolbar-content {
+                flex: unset;
+                display: block;
+                width: 100%;
+                margin-top: -20px;
+            }
+        }
+
+        .main-sm-title h5 {
+            margin-top: 0;
+        }
+
+        .bar-button-menutoggle {
+            margin-top: 12px !important;
+        }
+        
+        .back-button {
+            margin-top: 22px !important;
+        }
+    }
+
+    .rtl {
+
+        .bar-button-menutoggle {
+          right: 0;
+          left: auto;
+        }
+
+        .back-button {
+          left: 0;
+          right: auto;
+        }
+    }
+
+    .ltr {
+
+        .back-button {
+            right: 0;
+            left: auto;
+            transform: rotate(180deg);
+        }
+        
+        .bar-button-menutoggle {
+          left: 0;
+          right: auto;
+        }
+    }
+}
+
+
+@keyframes menuBarsIdle {
+    0%, 100% {
+        transform: translate(0) scaleX(1) translateZ(0);
+    }
+    50% {
+        transform: translate(0) scaleX(0) translateZ(0);
+    }
+}

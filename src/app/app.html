@@ -1,0 +1,114 @@
+<ion-menu [persistent]="true" [content]="appMenu" side="right" class="app-side-menu" id="right">
+    <ion-header no-padding no-margin>
+        <div padding no-margin class="brand-wrap rtl" >
+            <div class="logo-sm"></div>
+            <a href="{{ 'http://t3den.com' | utm }}" target="_blank" class="brand">
+                <h1>تعدين</h1>
+                <span>t3den.com</span>
+            </a>
+        </div>
+    </ion-header>
+    <ion-content [class.opacity-0]="helper.langDir() != 'rtl'">
+    <div dir="rtl">
+        <div *ngFor="let p of pages; let I=index" class="menu-item" [ngClass]="p.className">
+        <div *ngIf="hasLinkAccess(p)">
+            <button ion-button block clear no-margin menuClose [attr.icon-left]="getLocale() == 'en' ? '' : null" [attr.icon-right]="getLocale() == 'ar' ? '' : null" [class.current]="getActive() === p.selectedComponent || getActive() === p.component" class="menu-item-btn" (click)="openPage(p)">
+            <ion-icon name="{{ p.icon }}"></ion-icon>
+            {{ p.title | translate }}
+            </button>
+        </div>
+        <div *ngIf="p.component == '$action' && p.action == 'share'">
+            <button ion-button block clear no-margin menuClose [attr.icon-left]="getLocale() == 'en' ? '' : null" [attr.icon-right]="getLocale() == 'ar' ? '' : null" (click)="sharer.sheet()">
+            <ion-icon name="{{ p.icon }}"></ion-icon>
+            {{ p.title | translate }}
+            </button>
+        </div>
+        </div>
+        <!-- <div class="menu-item switch-lang">
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-6>
+                        <button ion-button block clear no-margin menuClose class="en T" [class.outline]="helper.lang != 'en'" [class.opacity-3]="helper.langDir() == 'ltr'" (click)="switchLocale('en')">
+                            {{ 'EN' | translate }}
+                        </button>
+                    </ion-col>
+                    <ion-col col-6>
+                        <button ion-button block clear no-margin menuClose class="ar T" [class.outline]="helper.lang != 'ar'" [class.opacity-3]="helper.langDir() == 'rtl'" (click)="switchLocale('ar')">
+                            {{ 'AR' | translate }}
+                        </button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div> -->
+        <a class="menu-footer" href="{{ 'http://voidblock.com' | utm }}" target="_blank">
+            <div class="voidblock"></div>
+            <div class="app-info">
+                <p>
+                    إصدار 
+                    <span class="force-ltr"> {{ appVersion }} </span>
+                </p>
+                <p>© 2018 - جميع الحقوق محفوظة.</p>
+                <p>برعاية <strong>voidblock</strong>.</p>
+            </div>
+        </a>
+    </div>
+    </ion-content>
+</ion-menu>
+<ion-menu [persistent]="true" [content]="appMenu" side="left" class="app-side-menu" id="left">
+    <ion-header no-padding no-margin>
+        <div padding no-margin class="brand-wrap ltr" >
+            <div class="logo-sm"></div>
+            <a href="{{ 'http://t3den.com' | utm }}" target="_blank" class="brand">
+                <h1>T3DEN</h1>
+                <span>t3den.com</span>
+            </a>
+        </div>
+    </ion-header>
+    <ion-content [class.opacity-0]="helper.langDir() != 'ltr'">
+    <div>
+        <div *ngFor="let p of pages; let I=index" class="menu-item" [ngClass]="p.className">
+        <div *ngIf="hasLinkAccess(p)">
+            <button ion-button block clear no-margin menuClose [attr.icon-left]="getLocale() == 'en' ? '' : null" [attr.icon-right]="getLocale() == 'ar' ? '' : null" [class.current]="getActive() === p.selectedComponent || getActive() === p.component" class="menu-item-btn" (click)="openPage(p)">
+            <ion-icon name="{{ p.icon }}"></ion-icon>
+            {{ p.title | translate }}
+            </button>
+        </div>
+        <div *ngIf="p.component == '$action' && p.action == 'share'">
+            <button ion-button block clear no-margin menuClose [attr.icon-left]="getLocale() == 'en' ? '' : null" [attr.icon-right]="getLocale() == 'ar' ? '' : null" (click)="sharer.sheet()">
+            <ion-icon name="{{ p.icon }}"></ion-icon>
+            {{ p.title | translate }}
+            </button>
+        </div>
+        </div>
+        <!-- <div class="menu-item switch-lang">
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-6>
+                        <button ion-button block clear no-margin menuClose class="en T" [class.outline]="helper.lang != 'en'" [class.opacity-3]="helper.langDir() == 'ltr'" (click)="switchLocale('en')">
+                            {{ 'EN' | translate }}
+                        </button>
+                    </ion-col>
+                    <ion-col col-6>
+                        <button ion-button block clear no-margin menuClose class="ar T" [class.outline]="helper.lang != 'ar'" [class.opacity-3]="helper.langDir() == 'rtl'" (click)="switchLocale('ar')">
+                            {{ 'AR' | translate }}
+                        </button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div> -->
+        <a class="menu-footer" href="{{ 'http://voidblock.com' | utm }}" target="_blank">
+            <div class="voidblock"></div>
+            <div class="app-info">
+                <p>
+                    App version 
+                    <span class="force-ltr"> {{ appVersion }} </span>
+                </p>
+                <p>© 2018 - All Rights Reserved.</p>
+                <p>Sponsored by <strong>voidblock</strong>.</p>
+            </div>
+        </a>
+    </div>
+    </ion-content>
+</ion-menu>
+<ion-nav main #appMenu [root]="rootPage" swipeBackEnabled="false"></ion-nav>
+<ng2-slim-loading-bar color="white"></ng2-slim-loading-bar>

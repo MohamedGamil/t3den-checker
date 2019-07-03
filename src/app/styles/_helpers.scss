@@ -1,0 +1,692 @@
+//--- App Styling Helpers
+///
+///
+
+
+
+.pull-right {
+	float: right;
+}
+
+.pull-left {
+	float: left;
+}
+
+.position-absolute {
+	position: absolute;
+}
+
+ion-content,
+.position-relative {
+	position: relative;
+}
+
+.absolute-center {
+	position: absolute;
+	text-align: center;
+	margin: auto;
+	top: 0; right: 0; bottom: 0; left: 0;
+}
+
+.display-inline-block {
+	display: inline-block;
+	// vertical-align: top;
+
+	&.dip-important {
+		display: inline-block !important;
+	}
+
+	&.va-top {
+		vertical-align: top;
+	}
+}
+
+.display-block {
+	display: block;
+}
+
+.margin-auto {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.bg-transparent {
+    background: transparent;
+
+    &.bgt-important {
+    	background: transparent !important;
+    }
+}
+
+.max-width-initial {
+	max-width: initial;
+
+	&.mwi-important {
+		max-width: initial !important;
+	}
+}
+
+.full-width {
+	width: 100%;
+}
+
+.full-height {
+	height: 100%;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-bold {
+	font-weight: bold !important;
+}
+
+.full-width-image {
+	// height: auto !important;
+
+	img {
+		display: block;
+		// width: 100%;
+		// height: auto;
+		// margin: auto;
+		// width: 100vw !important;
+		position: relative;
+		min-width: 105%;
+		min-height: 100%;
+		left: calc(-50vw + 52%);
+		// top: -10%;
+	}
+}
+
+.force-ltr {
+	display: inline-block;
+	vertical-align: baseline;
+	direction: ltr !important;
+}
+
+.boxshadow {
+	box-shadow: 0 1px 4px rgba(#000, 0.2);
+}
+
+.z-index-low {
+	z-index: 1;
+}
+
+.z-index-medium {
+	z-index: 9;
+}
+
+.z-index-high {
+	z-index: 99;
+}
+
+.z-index-top {
+	z-index: 999;
+}
+
+.border-radius-xs {
+	border-radius: 2px;
+}
+
+.border-radius-sm {
+	border-radius: 4px;
+}
+
+.border-radius-md {
+	border-radius: 8px;
+}
+
+.important-spacing {
+	
+	[no-padding] {
+		padding: 0 !important;
+	}
+
+	[no-margin] {
+		margin: 0 !important;
+	}
+}
+
+.transparent-input-list {
+
+	[no-padding] {
+		padding: 0;
+	}
+
+	&.list-ios {
+
+		> .item-block:first-child,
+		> .item-block:last-child {
+			border-color: transparent;
+		}
+	}
+
+	.item {
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	.item-ios, .item-md, .item-wp {
+		background: transparent;
+
+		.item-inner {
+			padding: 0 !important;
+			border-color: transparent;
+		}
+	}
+
+	.text-input-wp {
+		border-color: transparent;
+	}
+
+	.select-wp {
+		margin: 0;
+
+		.select-icon {
+
+			.select-icon-inner {
+				margin-top: 15px;
+				line-height: initial;
+				border-color: map-get($colors, dark);
+			}
+		}
+	}
+
+	.transparent-input {
+		// background-color: rgba( map-get($colors, dark), 0.05 );
+		border: 1px solid rgba( map-get($colors, dark), 0.2 ) !important;
+		border-radius: 4px;
+
+		&, .select-icon .select-icon-inner, .select-text {
+			color: map-get($colors, dark);
+		}
+
+		.select-icon, .select-text {
+			height: 3em;
+			line-height: 3em;
+		}
+
+		.select-icon {
+			width: 26px;
+		}
+
+		.select-icon-inner {
+			left: 15px;
+		}
+
+		.select-text {
+			padding: 0 8px;
+		}
+
+		&.input-has-focus {
+			border-color: rgba( map-get($colors, dark), 0.5 ) !important;
+		}
+
+		.text-input {
+
+			&::placeholder {
+				color: map-get($colors, dark);
+				color: rgba(map-get($colors, dark), 0.5);
+			}
+
+			&.text-input-wp {
+				border-radius: 4px;
+			}
+		}
+
+		.text-input-ios {
+
+			.lang-en & {
+				margin-left: 10px;
+				margin-right: 0px;
+			}
+		}
+
+		&.semi-input .label {
+			margin: 0;
+		}
+	}
+}
+
+.app-side-menu {
+	$text: primary;
+	$palette: light;
+	$default-text: #575757;
+	$default-bg: #FFF;
+	$current-text: #D4A332;
+	$current-bg: #FFF3D8;
+	$switch-text: map-get($colors, $palette);
+	$switch-bg: map-get($colors, secondary);
+	
+	.header-md {
+
+		&:after {
+			display: none;
+			// bottom: 3px;
+		}
+	}
+
+	.header-ios {
+		padding-top: 10px;
+	}
+
+	.brand-wrap {
+		padding: 40px 20px !important;
+		@include clearfix();
+
+		.logo-sm {
+			width: 52px;
+			height: 52px;
+			background: url('../assets/img/logo-sm.png') no-repeat transparent center;
+		}
+
+		.brand {
+			padding: 0 10px;
+			
+			&, &:active, &:hover, &:focus {
+				text-decoration: none;
+			}
+
+			&, h1, span {
+				display: block;
+			}
+
+			h1 {
+				margin: 0;
+				font-weight: 700;
+				color: color($colors, dark);
+			}
+			
+			span {
+				padding-top: 4px;
+				font-size: 9px;
+				font-weight: 400;
+				color: lighten(color($colors, dark), 50%);
+			}
+		}
+
+		&.ltr {
+
+			.logo-sm {
+				float: left;
+				margin-right: 10px;
+			}
+
+			.brand {
+				text-align: left;
+
+				h1 {
+					letter-spacing: 2px;
+				}
+
+				span {
+					text-indent: 2px;
+					letter-spacing: 5px;
+				}
+			}
+		}
+
+		&.rtl {
+
+			.logo-sm {
+				float: right;
+				margin-left: 10px;
+			}
+
+			.brand {
+				text-align: right;
+				direction: rtl;
+				
+				span {
+					letter-spacing: 2.3px;
+				}
+			}
+		}
+	}
+
+	.content, .scroll-content {
+		background-color: mix(map-get($colors, light), map-get($colors, $palette), 6%);
+	}
+
+	.menu-item {
+		margin: 0;
+		// border-bottom: 1px solid mix(map-get($colors, light), map-get($colors, $palette), 8%);
+
+		&:last-child {
+			border-color: transparent;
+		}
+
+		.button {
+			height: 52px;
+			color: $default-text;
+			background-color: $default-bg;
+			font-weight: 500;
+			border-radius: 0;
+			text-transform: initial;
+
+			.icon {
+				min-width: 40px;
+				text-align: left;
+			}
+
+			.button-inner {
+				justify-content: flex-start;
+			}
+
+			&.current {
+				color: $current-text;
+				background-color: $current-bg;
+			}
+		}
+
+		&.menu-item-signoutpage {
+
+			.button {
+				color: mix(map-get($colors, $text), map-get($colors, primary), 30%);
+				
+				&.current {
+					color: map-get($colors, $palette);
+				}
+			}
+		}
+
+		&.switch-lang {
+			width: 90%;
+			padding: 10px;
+			// margin-top: 10px;
+			// margin-left: 40px;
+
+			.button {
+				height: 30px;
+				color: $switch-text;
+				background-color: $switch-bg;
+				border-radius: 2px;
+				font-size: 12px !important;
+				font-weight: 500 !important;
+
+				.button-inner {
+					justify-content: center !important;
+				}
+
+
+				// - - -
+				$langcolor: desaturate(darken(color($colors, primary), 34%), 30%);
+				
+				&.ar {
+					$langcolor: desaturate(darken(color($colors, success), 12%), 30%) !default;
+					background-color: $langcolor;
+					border: 1px solid transparent;
+					
+					&.outline {
+						color: $langcolor;
+						background-color: transparent;
+						border-color: $langcolor;
+					}
+				}
+
+				&.en {
+					$langcolor: desaturate(darken(adjust-hue(color($colors, success), 90eg), 12%), 30%) !default;
+					background-color: $langcolor;
+					border: 1px solid transparent;
+
+					&.outline {
+						color: $langcolor;
+						background-color: transparent;
+						border: 1px solid $langcolor;
+					}
+				}
+			}
+		}
+	}
+
+	.menu-footer {
+		// position: absolute;
+		margin-top: 60px;
+		display: block;
+		z-index: 100;
+		width: 100%;
+		padding: 0;
+		bottom: 0;
+		left: 0;
+
+		&, &:active, &:hover, &:focus {
+			text-decoration: none;
+		}
+
+		.voidblock {
+			margin: 0 0 30px;
+			height: 33px;
+			background: url('../assets/img/voidblock.png') no-repeat center transparent;
+		}
+
+		.app-info {
+			padding: 15px;
+			color: darken(color($colors, light), 20%);
+			box-shadow: 0 -15px 32px rgba(#000, .04);
+
+			p {
+				margin: 0;
+				padding: 0 0 10px;
+				font-size: 12px;
+				font-weight: 400;
+				line-height: 1;
+
+				strong {
+					display: inline-block;
+					vertical-align: baseline;
+					font-weight: 600;
+					font-family: $font-poppins;
+					padding-bottom: 3px;
+					border-bottom: 2px solid darken(color($colors, light), 10%);
+
+				}
+			}
+		}
+	}
+
+	&[side='left'] {
+		
+		.menu-item .button {
+			padding-left: 20px !important;
+		}
+	}
+
+	&[side='right'] {
+		
+		.menu-item .button {
+			padding-right: 10px !important;
+		}
+	}
+}
+
+.file-item {
+	
+	> ion-card {
+		$h: 100px;
+		overflow: hidden;
+
+		&,
+		div img {
+			min-height: $h;
+			max-height: $h;
+			object-fit: cover;
+		}
+	}
+}
+
+.text-sm,
+.text-small {
+	font-size: 12px;
+
+	&.I {
+		font-size: 12px !important;
+	}
+}
+
+.text-md {
+	font-size: 14px;
+
+	&.I {
+		font-size: 14px !important;
+	}
+}
+
+ion-card.bg-card {
+	position: relative;
+	text-align: center;
+
+	.card-title {
+		position: absolute;
+		top: 36%;
+		font-size: 2.0em;
+		width: 100%;
+		font-weight: bold;
+		color: #fff;
+	}
+
+	.card-subtitle {
+		font-size: 1.0em;
+		position: absolute;
+		top: 52%;
+		width: 100%;
+		color: #fff;
+	}
+}
+
+.button-group {
+	
+	.col {
+
+		&:first-child:not(:last-child) {
+			padding-right: 0;
+			.button {
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+		}
+
+		&:not(:first-child):not(:last-child) {
+			padding-right: 0;
+			padding-left: 0;
+			.button {
+				border-radius: 0;
+			}
+		}
+
+		&:last-child:not(:first-child) {
+			padding-left: 0;
+			.button {
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+		}
+	}
+}
+
+// Whitespaced Toasts
+.white-space-pre .toast-message {
+	white-space: pre;
+}
+
+// Big Cards
+.big-cards {
+	padding: 0 15px;
+	height: 390px;
+
+	.swiper-container.swiper-container-horizontal {
+		overflow: visible !important;
+	}
+	
+	.swiper-slide {
+
+		.card {
+			transform: scale(.9) translateY(1.5%);
+			transition: all 0.6s ease-out;
+		}
+		
+		&.swiper-slide-active .card,
+		&.coinselected .card {
+			transition-delay: .2s;
+			transform: scale(1) translateY(0);
+		}
+	}
+
+	.card {
+		// min-width: 100%;
+		min-width: calc(100vw - 60px);
+		margin-top: -30px;
+		min-height: 380px;
+		background: color( $colors, light );
+		border-radius: 8px;
+		box-shadow: 0 4px 12px rgba(#000, 0.14);
+	}
+}
+
+// Alert Buttons
+.alert-button {
+	
+	&.alert-btn-cancel {
+		color: color($colors, danger);
+	}
+
+	&.alert-btn-ok {
+		color: color($colors, primary);
+	}
+}
+
+
+// Opacity Helpers
+@each $rate in (0, .1, .2, .3, .5, .7, .9) {
+	$s: $rate * 10;
+
+	.opacity-#{$s} {
+		opacity: $rate;
+		
+		&.I {
+			opacity: $rate !important;
+		}
+
+		&.T {
+			transition: opacity .4s ease-out;
+		}
+	}
+}
+
+
+// Margin & Padding
+@each $size, $keyword in (5px xs, 10px sm, 15px md, 20px lg) {
+	
+	.mt-#{$keyword} {
+		margin-top: $size;
+	}
+	.mr-#{$keyword} {
+		margin-right: $size;
+	}
+	.mb-#{$keyword} {
+		margin-bottom: $size;
+	}
+	.ml-#{$keyword} {
+		margin-left: $size;
+	}
+	
+	.pt-#{$keyword} {
+		padding-top: $size;
+	}
+	.pr-#{$keyword} {
+		padding-right: $size;
+	}
+	.pb-#{$keyword} {
+		padding-bottom: $size;
+	}
+	.pl-#{$keyword} {
+		padding-left: $size;
+	}
+}
+
+// Color Based Helpers
+@each $color in (primary, secondary, light, dark, danger) {
+    .bg-#{$color} {
+        background-color: map-get($colors, $color);
+    }
+}

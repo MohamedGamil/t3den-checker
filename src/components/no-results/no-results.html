@@ -1,0 +1,8 @@
+<div *ngIf="!!visible" text-center padding [dir]="helper.langDir()">
+  <div class="z-index-medium position-relative" margin *ngIf="!!logo">
+    <div class="splash-logo margin-auto mt-lg">
+      <img width="103" height="169" src="assets/img/logo-dark-md.png" class="slide-image bg-transparent">
+    </div>
+  </div>
+  <div class="text-bold" ion-text color="dark"> {{ ( !! phrase ? phrase : 'NO_RESULTS' ) | translate }} </div>
+</div>

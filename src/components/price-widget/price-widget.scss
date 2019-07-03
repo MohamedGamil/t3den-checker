@@ -1,0 +1,109 @@
+price-widget {
+
+    h1, h2, h3, h4, h5 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .converter {
+        margin-top: 20px;
+        padding-top: 30px !important;
+    }
+
+    .ctitle {
+        margin-top: 20px !important;
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    .crypto-icon {
+        margin-top: 40px !important;
+        font-size: 92px;
+
+        // margin-top: -60px;
+    }
+
+    .clabel {
+        position: relative;
+        font-size: 26px;
+        font-weight: 100;
+        font-family: $font-roboto;
+
+        ion-icon {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            margin-top: -.4em;
+            font-size: 13px;
+            opacity: .77;
+        }
+    }
+
+    .cinput {
+        border: 1px solid color($colors, primary);
+        border-radius: 4px;
+        
+        .text-input {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 13px;
+            font-weight: bold;
+            font-family: $font-roboto;
+        }
+    }
+
+    .coutput {
+        margin: 0;
+        font-size: 22px;
+        font-weight: bold;
+        font-family: $font-roboto;
+    }
+
+    .btn-wrapper {
+        margin-top: 20px;
+        padding-bottom: 10px;
+        text-align: center;
+
+        .button {
+            color: color($colors, light);
+        }
+    }
+
+    [dir='rtl'] {
+
+        .ctitle {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .coutput {
+            text-align: right;
+        }
+
+        .clabel ion-icon {
+            left: -14px;
+        }
+
+        .btn-wrapper .button {
+            font-weight: 400;
+            font-size: 16px;
+        }
+    }
+
+    [dir='ltr'] {
+
+        .ctitle {
+            font-size: 14px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+        }
+
+        .coutput {
+            text-align: left;
+        }
+
+        .clabel ion-icon {
+            right: -14px;
+        }
+    }
+}

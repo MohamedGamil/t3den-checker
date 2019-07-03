@@ -1,0 +1,156 @@
+//--- App Base Styling
+///
+///
+
+
+
+
+.slide-height {
+	min-height: 260px;
+	max-height: 360px;
+}
+
+.app-loading-wrap {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background: rgba( map-get($colors, secondary), 0.3);
+	opacity: 0;
+	transform: scale(.87);
+	transition: 0.2s ease-in-out;
+	z-index: -2;
+
+	ion-spinner {
+		width: 2.5em;
+		height: 2.5em;
+		@extend .absolute-center;
+
+		* {
+			stroke: map-get($colors, light);
+		}
+	}
+
+	&.presented {
+		opacity: 1;
+		transform: scale(1);
+		z-index: 99991;
+	}
+}
+
+.app-loading-bar {
+	position: fixed;
+	width: 100%;
+	height: 6px;
+	top: 0; left: 0;
+	opacity: 0.67;
+
+	span {
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		background: color($colors, light);
+		transition-delay: 0.5s;
+		transition: all .5s ease-in-out;
+		opacity: 0;
+	}
+
+	&.presented span {
+		animation: appLoadingBar linear 20s;
+	}
+
+	&.done span  {
+		animation: appLoadingBar linear 2s;
+	}
+}
+
+.app-bg-default {
+	background-color: #d188b5;
+	background-image: url('../assets/img/bg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.app-bg-gradient {
+	// background-color: mix(map-get($colors, secondary), map-get($colors, light), 70%) !important;
+	// background: #cc6699;
+	// background: -moz-linear-gradient(-45deg, #cc6699 0%, #333366 100%);
+	// background: -webkit-linear-gradient(-45deg, #cc6699 0%,#333366 100%);
+	// background: linear-gradient(135deg, #cc6699 0%,#333366 100%);
+	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc6699', endColorstr='#333366',GradientType=1 );
+	background: #333366;
+	background: -moz-linear-gradient(45deg, #333366 0%, #cc6699 100%);
+	background: -webkit-linear-gradient(45deg, #333366 0%,#cc6699 100%);
+	background: linear-gradient(45deg, #333366 0%,#cc6699 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333366', endColorstr='#cc6699',GradientType=1 );
+}
+
+.header.header-md {
+
+	&:after {
+		display: none;
+	}
+}
+
+
+ion-navbar + ion-toolbar {
+	padding: 0 !important;
+	min-height: initial !important;
+}
+
+ion-col:first-child.col-adj-padding {
+	padding-right: 4px;
+}
+
+ion-col:last-child.col-adj-padding {
+	padding-left: 4px;
+}
+
+img {
+	object-position: center;
+	// object-position: 50% 50%;
+}
+
+.button-md {
+	box-shadow: none !important;
+}
+
+.cf:before,
+.cf:after {
+  content: ".";    
+  display: block;    
+  height: 0;    
+  overflow: hidden;	
+}
+.cf:after {clear: both;}
+.cf {zoom: 1;} /* IE < 8 */
+
+
+
+/* fixes for areal device not web */
+
+.toolbar-ios ion-title {
+	// padding: 0 20px 1px;
+}
+
+ion-input, ion-textarea {
+	// line-height: 20px;
+}
+
+
+@keyframes appLoadingBar {
+  0% {
+    width: 0;
+  }
+  0%,
+  95% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}

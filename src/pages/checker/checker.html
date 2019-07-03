@@ -1,0 +1,150 @@
+<ion-content>
+  <common-header [hero]="true" pageTitle="CHECKER"></common-header>
+  <ion-slides #slides class="big-cards" [control]="navSlides" [initialSlide]="active" slidesPerView="1" (ionSlideDidChange)="updateActive($event)">
+    <ion-slide class="BTC" [class.coinselected]="active == getIndex('BTC')">
+      <ion-card>
+        <ion-card-content>
+          <price-widget currency="BTC" [ticker]="active == getIndex('BTC')"></price-widget>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="ETH" [class.coinselected]="active == getIndex('ETH')">
+      <ion-card>
+        <ion-card-content>
+          <price-widget currency="ETH" [ticker]="active == getIndex('ETH')"></price-widget>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="BCH" [class.coinselected]="active == getIndex('BCH')">
+      <ion-card>
+        <ion-card-content>
+          <price-widget currency="BCH" [ticker]="active == getIndex('BCH')"></price-widget>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="LTC" [class.coinselected]="active == getIndex('LTC')">
+      <ion-card>
+        <ion-card-content>
+          <price-widget currency="LTC" [ticker]="active == getIndex('LTC')"></price-widget>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="DASH" [class.coinselected]="active == getIndex('DASH')">
+      <ion-card>
+        <ion-card-content>
+          <price-widget currency="DASH" [ticker]="active == getIndex('DASH')"></price-widget>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="XMR" [class.coinselected]="active == getIndex('XMR')">
+      <ion-card>
+        <ion-card-content>
+          <price-widget currency="XMR" [ticker]="active == getIndex('XMR')"></price-widget>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="ZEC" [class.coinselected]="active == getIndex('ZEC')">
+      <ion-card>
+        <ion-card-content>
+          <price-widget currency="ZEC" [ticker]="active == getIndex('ZEC')"></price-widget>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="NEO" [class.coinselected]="active == getIndex('NEO')">
+      <ion-card>
+        <ion-card-content>
+          <price-widget currency="NEO" [ticker]="active == getIndex('NEO')"></price-widget>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="IOTA" [class.coinselected]="active == getIndex('IOTA')">
+      <ion-card>
+        <ion-card-content>
+          <price-widget currency="IOTA" [ticker]="active == getIndex('IOTA')"></price-widget>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="XRP" [class.coinselected]="active == getIndex('XRP')">
+      <ion-card>
+        <ion-card-content>
+          <price-widget currency="XRP" [ticker]="active == getIndex('XRP')"></price-widget>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="XEM" [class.coinselected]="active == getIndex('XEM')">
+      <ion-card>
+        <ion-card-content>
+          <price-widget currency="XEM" [ticker]="active == getIndex('XEM')"></price-widget>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <ion-slides #navSlides slidesPerView="2.5" [control]="slides" [centeredSlides]="true" spaceBetween="5" class="nav-slides">
+    <ion-slide class="BTC" [class.selected]="active == getIndex('BTC')">
+      <ion-card tappable (click)="slideTo('BTC')">
+        <span class="cc {{ getCoin('BTC').icon_class }}"></span>
+        <span> {{ 'BTC' | translate }} </span>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="ETH" [class.selected]="active == getIndex('ETH')">
+      <ion-card tappable (click)="slideTo('ETH')">
+        <span class="cc {{ getCoin('ETH').icon_class }}"></span>
+        <span> {{ 'ETH' | translate }} </span>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="BCH" [class.selected]="active == getIndex('BCH')">
+      <ion-card tappable (click)="slideTo('BCH')">
+        <span class="cc {{ getCoin('BCH').icon_class }}"></span>
+        <span> {{ 'BCH' | translate }} </span>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="LTC" [class.selected]="active == getIndex('LTC')">
+      <ion-card tappable (click)="slideTo('LTC')">
+        <span class="cc {{ getCoin('LTC').icon_class }}"></span>
+        <span> {{ 'LTC' | translate }} </span>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="DASH" [class.selected]="active == getIndex('DASH')">
+      <ion-card tappable (click)="slideTo('DASH')">
+        <span class="cc {{ getCoin('DASH').icon_class }}"></span>
+        <span> {{ 'DASH' | translate }} </span>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="XMR" [class.selected]="active == getIndex('XMR')">
+      <ion-card tappable (click)="slideTo('XMR')">
+        <span class="cc {{ getCoin('XMR').icon_class }}"></span>
+        <span> {{ 'XMR' | translate }} </span>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="ZEC" [class.selected]="active == getIndex('ZEC')">
+      <ion-card tappable (click)="slideTo('ZEC')">
+        <span class="cc {{ getCoin('ZEC').icon_class }}"></span>
+        <span> {{ 'ZEC' | translate }} </span>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="NEO" [class.selected]="active == getIndex('NEO')">
+      <ion-card tappable (click)="slideTo('NEO')">
+        <span class="cc {{ getCoin('NEO').icon_class }}"></span>
+        <span> {{ 'NEO' | translate }} </span>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="IOTA" [class.selected]="active == getIndex('IOTA')">
+      <ion-card tappable (click)="slideTo('IOTA')">
+        <span class="cc {{ getCoin('IOTA').icon_class }}"></span>
+        <span> {{ 'IOTA' | translate }} </span>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="XRP" [class.selected]="active == getIndex('XRP')">
+      <ion-card tappable (click)="slideTo('XRP')">
+        <span class="cc {{ getCoin('XRP').icon_class }}"></span>
+        <span> {{ 'XRP' | translate }} </span>
+      </ion-card>
+    </ion-slide>
+    <ion-slide class="XEM" [class.selected]="active == getIndex('XEM')">
+      <ion-card tappable (click)="slideTo('XEM')">
+        <span class="cc {{ getCoin('XEM').icon_class }}"></span>
+        <span> {{ 'XEM' | translate }} </span>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

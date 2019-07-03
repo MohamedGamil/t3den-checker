@@ -1,0 +1,6 @@
+<div class="app-loading-bar" [class.presented]="!!when" [class.done]="!when" *ngIf="!!isBar">
+  <span></span>
+</div>
+<div class="app-loading-wrap" [class.presented]="!!when" *ngIf="!isBar">
+  <ion-spinner icon="spiral"></ion-spinner>
+</div>

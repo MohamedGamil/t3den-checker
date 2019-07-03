@@ -1,0 +1,77 @@
+page-landing {
+    $bgurl: '../assets/img/';
+
+
+    ion-content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        
+        .scroll-content {
+            overflow: hidden !important;
+        }
+    }
+
+    .splash-logo, .splash-plus .plus {
+        position: absolute;
+        margin: auto;
+        top: 0; right: 0; bottom: 0; left: 0;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        background-position: center center;
+    }
+
+    .splash-logo {
+        width: 258px;
+        height: 257px;
+        z-index: 100;
+        background-image: url( $bgurl + 'logo.png' );
+    }
+    
+    .splash-plus {
+        opacity: .3;
+
+        .plus {
+    
+            $counter: 1;
+            @each $size, $plus in (
+                'xs-bl': 9px -60px 90px,
+                'xs-bc': 13px 0 -153px,
+                'sm-bl': 16px -111px 55px,
+                'sm-tl': 12px 76px 80px,
+                'xs-cr': 9px 156px -12px,
+                'xs-tr': 9px 57px -147px,
+                'sm-tr': 16px 96px -77px,
+                'xs-tl': 9px -86px -124px,
+                'md-tl': 15px -120px -68px,
+                'xl-br': 30px 103px 100px,
+            ) {
+                &.#{$size} {
+                    width: nth($plus, 1);
+                    height: nth($plus, 1);
+                    background-image: url( $bgurl + 'plus-'+ $size +'.png' );
+                    transform: translate(nth($plus, 2), nth($plus, 3)) scale(0);
+                    animation-delay: (1s * $counter);
+                    animation: unquote('plusAnimation' + $counter) infinite ((0.3s * $counter) + 0.7s) ease-in-out;
+                }
+    
+                @keyframes #{unquote('plusAnimation' + $counter)} {
+                0%,
+                100% {
+                    opacity: 0;
+                    transform: translate(nth($plus, 2), nth($plus, 3)) scale(.2);
+                }
+                
+                50% {
+                    opacity: 1;
+                    transform: translate(nth($plus, 2), nth($plus, 3)) scale(1);
+                }
+                }
+    
+                $counter: $counter + 1;
+            }
+        }
+    }
+}
+
+

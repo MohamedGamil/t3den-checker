@@ -1,0 +1,23 @@
+page-settings {
+
+    .transparent-input-list {
+
+        .transparent-input {
+            border-radius: 0;
+            border-width: 0 0 1px !important;
+            border-color: darken(color($colors, light), 7%) !important;
+
+            .select-icon {
+                opacity: .4;
+            }
+        }
+    }
+
+    // .alert-wrapper .alert-head {
+
+    //     .alert-title {
+    //         font-size: 16px !important;
+    //         font-weight: 600 !important;
+    //     }
+    // }
+}

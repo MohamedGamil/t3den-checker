@@ -1,0 +1,99 @@
+<ion-header>
+  <common-header pageTitle="SETTINGS"></common-header>
+</ion-header>
+
+<ion-content>
+  <form (submit)="submit()" [formGroup]="Form" class="position-relative">
+    <ion-list no-margin padding class="transparent-input-list" [attr.dir]="helper.langDir()">
+      <ion-item margin-top no-padding>
+        <ion-label stacked> {{ selectOpts.currency.title }} </ion-label>    
+        <ion-select 
+          no-padding 
+          name="defaultCurrency" 
+          class="transparent-input full-width max-width-initial padding-sm" 
+          placeholder="{{ 'SETTINGS_DEFAULT_CURRENCY' | translate }}"
+          cancelText="{{ 'CANCEL' | translate }}" 
+          okText="{{ 'OK' | translate }}" 
+          interface="popover"
+          (ionChange)="updateChanges()" 
+          [ngModelOptions]="{standalone: true}" 
+          [(ngModel)]="fields.defaultCurrency" 
+          [selectOptions]="selectOpts.currency">
+          <ion-option *ngFor="let opt of virtualCurrencies" [value]="opt.value">{{ opt.value }} - {{ opt.value | translate }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item margin-top no-padding>
+        <ion-label stacked> {{ selectOpts.local.title }} </ion-label>    
+        <ion-select 
+          no-padding 
+          name="localCurrency" 
+          class="transparent-input full-width max-width-initial padding-sm" 
+          placeholder="{{ 'SETTINGS_LOCAL_CURRENCY' | translate }}"
+          cancelText="{{ 'CANCEL' | translate }}" 
+          okText="{{ 'OK' | translate }}" 
+          interface="popover"
+          (ionChange)="updateChanges()"
+          [ngModelOptions]="{standalone: true}" 
+          [(ngModel)]="fields.localCurrency" 
+          [selectOptions]="selectOpts.local">
+          <ion-option *ngFor="let opt of localCurrencies" [value]="opt.value">{{ opt.value }} - {{ opt.label }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item margin-top no-padding>
+        <ion-label stacked> {{ selectOpts.format.title }} </ion-label>    
+        <ion-select 
+          no-padding 
+          name="numbersFormat" 
+          class="transparent-input full-width max-width-initial padding-sm" 
+          placeholder="{{ 'SETTINGS_FORMAT' | translate }}"
+          cancelText="{{ 'CANCEL' | translate }}" 
+          okText="{{ 'OK' | translate }}" 
+          interface="popover"
+          (ionChange)="updateChanges()" 
+          [ngModelOptions]="{standalone: true}" 
+          [(ngModel)]="fields.numbersFormat" 
+          [selectOptions]="selectOpts.format">
+          <ion-option *ngFor="let opt of formats" [value]="opt.value">{{ opt.label | translate }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item margin-top no-padding>
+        <ion-label stacked> {{ selectOpts.interval.title }} </ion-label>    
+        <ion-select 
+          no-padding 
+          name="updateInterval" 
+          class="transparent-input full-width max-width-initial padding-sm" 
+          placeholder="{{ 'SETTINGS_INTERVAL' | translate }}"
+          cancelText="{{ 'CANCEL' | translate }}" 
+          okText="{{ 'OK' | translate }}" 
+          interface="popover"
+          (ionChange)="updateChanges()" 
+          [ngModelOptions]="{standalone: true}" 
+          [(ngModel)]="fields.updateInterval" 
+          [selectOptions]="selectOpts.interval">
+          <ion-option *ngFor="let opt of intervalRanges" [value]="opt.value">{{ opt.value }} {{ 'MIN' | translate }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item margin-top no-padding>
+        <ion-label stacked> {{ selectOpts.lang.title }} </ion-label>    
+        <ion-select 
+          no-padding 
+          name="lang" 
+          class="transparent-input full-width max-width-initial padding-sm" 
+          placeholder="{{ 'SETTINGS_LANG' | translate }}"
+          cancelText="{{ 'CANCEL' | translate }}" 
+          okText="{{ 'OK' | translate }}" 
+          interface="popover"
+          (ionChange)="updateChanges()" 
+          [ngModelOptions]="{standalone: true}" 
+          [(ngModel)]="fields.lang" 
+          [selectOptions]="selectOpts.lang">
+          <ion-option value="en">{{ 'EN' | translate }}</ion-option>
+          <ion-option value="ar">{{ 'AR' | translate }}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <div padding-horizontal margin-bottom class="action-buttons">
+        <!-- <button ion-button color="primary">{{ 'UPDATE' | translate }}</button> -->
+    </div>
+  </form>
+</ion-content>

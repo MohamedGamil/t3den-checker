@@ -1,0 +1,78 @@
+page-checker {
+
+    ion-content {
+        background-color: darken( color($colors, light), 4% );
+    }
+
+    .big-cards, .nav-slides {
+        position: relative;
+    }
+
+    .big-cards {
+        z-index: 1;
+
+        .card {
+            margin-top: -20px;
+            height: 64vh;
+        }
+    }
+
+    .BCH {
+
+        .cc {
+            display: inline-block;
+            transform: rotate(-15deg) !important;
+        }
+    }
+
+    .nav-slides {
+        height: 80px;
+        margin-top: 30px;
+        padding: 0;
+        z-index: 10;
+
+        ion-slide,
+        ion-card {
+            margin: 0;
+        }
+
+        ion-slide {
+            min-width: 140px;
+        }
+
+        ion-card {
+            // margin-top: 20px;
+            padding: 4px 0;
+            color: color($colors, primary);
+            border: 1px solid color($colors, primary);
+            box-shadow: 0 0 0 transparent;
+            transition: all 0.6s ease-out;
+            transform: scale(.87);
+            font-size: 14px;
+            white-space: nowrap;
+
+            .cc {
+                padding: 0 4px;
+                font-size: 20px;
+            }
+
+            span {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+        
+        .selected ion-card,
+        ion-card.selected {
+            color: color($colors, light);
+            background: color($colors, primary);
+            background: -moz-linear-gradient(left, #ffb100 0%, #ffc746 25%, #ffbd24 100%);
+            background: -webkit-linear-gradient(left, #ffb100 0%, #ffc746 25%, #ffbd24 100%);
+            background: linear-gradient(to right, #ffb100 0%, #ffc746 25%, #ffbd24 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb100', endColorstr='#ffbd24', GradientType=1);
+            border-color: transparent;
+            box-shadow: 0 4px 8px rgba(#000, 0.16);
+            transform: scale(1);
+        }
+    }
+}

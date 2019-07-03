@@ -1,0 +1,14 @@
+<div [class.hasLogo]="!!logo" [class.isHero]="!!hero" [class.ltr]="helper.langDir() == 'ltr'" [class.rtl]="helper.langDir() == 'rtl'">
+<ion-navbar [attr.no-border-bottom]="!bBottom ? '' : null">
+  <ion-navbar class="common-navbar">
+    <ion-title class="main-sm-title">
+      <h5 ion-text color="light" [ngClass]="{'pull-right': helper.langDir() == 'rtl', 'pull-left': helper.langDir() == 'ltr'}" *ngIf="!!pageTitle && pageTitle.length > 0">{{ pageTitle | translate }}</h5>
+    </ion-title>
+    <button *ngIf="!!menuToggle" ion-button icon-only [menuToggle]="helper.menuDirection" color="light" class="display-inline-block dip-important" [class.dir-ltr]="helper.langDir() == 'ltr'" [class.dir-rtl]="helper.langDir() == 'rtl'" [attr.right]="helper.langDir() == 'rtl' ? '' : null" [attr.left]="helper.langDir() == 'ltr' ? '' : null">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </button>
+  </ion-navbar>
+</ion-navbar>
+</div>

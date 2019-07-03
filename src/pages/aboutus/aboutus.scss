@@ -1,0 +1,93 @@
+page-aboutus {
+
+    .big-cards,
+    common-header {
+        position: relative;
+    }
+
+    common-header {
+        z-index: 1;
+    }
+
+    .big-cards {
+        z-index: 10;
+
+        .card {
+            position: relative;
+            overflow: visible;
+            height: 440px;
+
+            .card-content {
+                // padding-right: 10px;
+                // padding-left: 10px;
+            }
+        }
+
+        &.rtl .card {
+            height: 360px;
+        }
+
+        &.ltr .card {
+            height: 460px;
+        }
+    }
+
+    .logo-about {
+        height: 170px;
+        margin: 20px 0 10px;
+        background: url('../assets/img/logo-about.png') no-repeat transparent center;
+    }
+
+    .about-text {
+        text-align: center;
+
+        h1 {
+            font-size: 18px;
+            font-weight: 800;
+            color: color($colors, dark);
+        }
+
+        p {
+            padding: 10px 0 0;
+            line-height: 1.78;
+            font-size: 13px;
+            font-weight: 400;
+            color: lighten(color($colors, dark), 30%);
+            justify-content: center;
+        }
+
+        .link-wrap {
+
+            a {
+                position: absolute;
+                width: 140px;
+                height: 32px;
+                z-index: 100;
+                padding: 10px !important;
+                margin: auto;
+                left: 0;
+                right: 0;
+                bottom: -14px;
+                color: color($colors, light);
+            }
+        }
+
+        &[dir="rtl"] {
+
+            p {
+                padding-top: 20px;
+            }
+        }
+
+        &[dir="ltr"] {
+
+            h1 {
+                letter-spacing: 4px;
+            }
+
+            p {
+                // text-align: left;
+            }
+        }
+    }
+}

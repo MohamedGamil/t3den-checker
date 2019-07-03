@@ -1,0 +1,36 @@
+<div [dir]="helper.langDir()">
+    <h4 ion-text color="primary" text-center class="ctitle"> {{ coinName }} </h4>
+    <h2 ion-text color="primary" text-center class="crypto-icon">
+        <span class="cc {{ iconClass }}"></span>
+    </h2>
+    <form (submit)="updatePricing()">
+        <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
+        <ion-grid class="converter pt-lg">
+            <ion-row align-items-center>
+                <ion-col col-5>
+                    <span ion-text color="primary" text-center class="clabel">{{ coinSymbol }}</span>
+                </ion-col>
+                <ion-col col-7>
+                    <ion-input name="coinBaseValue" min="1" max="1000000000000" type="number" class="cinput" [ngModelOptions]="{standalone: true}" [(ngModel)]="_coinBase"></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row align-items-center>
+                <ion-col col-5>
+                    <a ion-text color="dark" text-center class="clabel" (click)="selectDistCurrency()">
+                        <ion-icon name="ios-arrow-down" [class.pull-left]="helper.langDir() == 'rtl'" [class.pull-right]="helper.langDir() == 'ltr'"></ion-icon>
+                        {{ distCurrency }}
+                    </a>
+                </ion-col>
+                <ion-col col-7>
+                    <div class="coutput"> {{ result }} </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
+    <!-- <div class="btn-wrapper">
+        <button ion-button color="primary" small icon-end tappable (tap)="viewChart()">
+            {{ 'VIEW_HISTORY' | translate }}
+            <ion-icon name="ios-arrow-round-forward"></ion-icon>
+        </button>
+    </div> -->
+</div>
